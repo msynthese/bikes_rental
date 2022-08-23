@@ -1,0 +1,15 @@
+<div class="card-bike-index-main">
+  <p> <%= link_to "Back to all bikes", bikes_path %> </p>
+  <div class="card-bike-index-cards">
+    <% @bikes.each do |bike| %>
+      <div class="card-bike-index-card">
+        <img src="<%=bike.picture_url%>" alt="bike picture">
+        <div class="bike-info">
+          <%= link_to bike.name.capitalize(), bike_path(bike) %>
+          <p><%= bike.price %>.-/day</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<p> <%= link_to "Back to all bikes", bikes_path %> </p>

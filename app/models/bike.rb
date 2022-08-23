@@ -1,12 +1,12 @@
 class Bike < ApplicationRecord
-  belongs_to :usergit
+  belongs_to :user
 
-  enum type: { road: 0, mountain: 1, electric: 2 }
+  enum category: { road: 0, mountain: 1, electric: 2 }
   enum size: { adult: 0, junior: 1 }
 
   validates :name, presence: true
-  validates :type, presence: true, inclusion: { in: types.keys, message: "{value} is not valid. Type must be one of #{types.keys}" }
-  validates :size, presence: true, inclusion: { in: sizes.keys, message: "{value} is not valid. Type must be one of #{sizes.keys}" }
+  validates :category, presence: true, inclusion: { in: categories.keys, message: "{value} is not valid." }
+  validates :size, presence: true, inclusion: { in: sizes.keys, message: "{value} is not valid." }
   validates :price, presence: true
   validates :location, presence: true
 
