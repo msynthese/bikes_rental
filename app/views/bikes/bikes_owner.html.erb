@@ -1,0 +1,3 @@
+<h1>Owner's Bikes</h1>
+Current User is: <%= current_user.id %>
+Bikes <%=Bikes.where(user_id = current_user.id) %>

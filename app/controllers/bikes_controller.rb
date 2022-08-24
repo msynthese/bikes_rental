@@ -23,6 +23,12 @@ class BikesController < ApplicationController
   def show
   end
 
+  def bikes_owner
+    # @bikes = Bike.find(params[:current_user])
+    # @bikes = Bike.where
+
+  end
+
 
   private
 
