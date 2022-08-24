@@ -14,6 +14,7 @@
           <p><b>Size:</b> <%= @bike.size %></p>
           <p><b>Price:</b> <%= @bike.price %>.- /day</p>
           <p><b>Owner:</b> <%= "#{@bike.user.first_name} #{@bike.user.last_name}" %></p>
+          <p><b>CURRENT USER CHECK:</b> <%= current_user.first_name %></p>
           <p class="mb-0">
           </div>
           <!-- / project-info-box -->
