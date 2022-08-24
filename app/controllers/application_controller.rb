@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name owner])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name owner longitude latitude])
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name owner])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name owner longitude latitude])
   end
 end
