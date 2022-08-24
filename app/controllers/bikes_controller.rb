@@ -23,6 +23,10 @@ class BikesController < ApplicationController
   def show
   end
 
+  def bikes_owner
+    @bikes = Bike.where(user_id: current_user)
+  end
+
 
   private
 
