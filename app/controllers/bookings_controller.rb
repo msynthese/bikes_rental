@@ -1,12 +1,12 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
 
   # Time.zone = 'Central European Time (CET)'
 
   # before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
-  before_action :logged_in_user, only: [:show, :edit, :index, :new, :create, :destroy]
-  before_action :logged_in_as_admin, only: [:destroy]
-  before_action :can_destroy, only: [:destroy]
+  # before_action :logged_in_user, only: [:show, :edit, :index, :new, :create, :destroy]
+  # before_action :logged_in_as_admin, only: [:destroy]
+  # before_action :can_destroy, only: [:destroy]
 
   # def index
   #   @booking = Booking.all
