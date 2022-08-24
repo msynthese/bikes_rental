@@ -1,3 +1,17 @@
 <h1>Owner's Bikes</h1>
 Current User is: <%= current_user.id %>
-Bikes <%=Bikes.where(user_id = current_user.id) %>
+<div class="card-bike-index-cards">
+  <%@bikes.each do |bike|%>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src=<%=bike.picture_url%> alt="bike image">
+      <div class="card-body">
+        <h5 class="card-title"> <%=bike.name%> </h5>
+        <p class="card-text"> <%=bike.user.first_name%>  <%=bike.user.last_name%> </p>
+        <p class="card-text"> <%=bike.category%> </p>
+        <p class="card-text"> <%=bike.price%> </p>
+        <a href="#" class="btn btn-primary">See</a>
+      </div>
+    </div>
+  <%end%>
+</div>
+<!-- bike.user_id = current_user -->

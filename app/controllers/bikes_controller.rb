@@ -24,9 +24,7 @@ class BikesController < ApplicationController
   end
 
   def bikes_owner
-    # @bikes = Bike.find(params[:current_user])
-    # @bikes = Bike.where
-
+    @bikes = Bike.where(user_id: current_user)
   end
 
 
