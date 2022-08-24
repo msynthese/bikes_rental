@@ -1,13 +1,18 @@
-<div >
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <div class="input-group">
-    <div class="form-outline">
-      <input type="search" id="form1" class="form-control" />
-      <label class="form-label" for="form1">Search</label>
+<div class="d-flex flex-column pt-4"style="height: calc(100vh - 72px); background-image: url(/assets/background.jpg); background-position: center">
+  <div>
+    <h1 class="text-center" style="color: black; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+            1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff">Welcome on bikes rental</h1>
+    <h2 class="text-center" style="color: black; text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+            1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff">The first bike rental website between individuals !</h2>
+  </div>
+  <div class="flex-grow-1">
+    <div class="d-flex h-100 align-items-center justify-content-center">
+      <nav class="navbar navbar-light">
+        <form class="d-flex form-inline">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </nav>
     </div>
-    <button type="button" class="btn btn-primary">
-      <i class="fas fa-search"></i>
-    </button>
   </div>
 </div>
