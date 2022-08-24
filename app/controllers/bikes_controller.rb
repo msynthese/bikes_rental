@@ -6,13 +6,13 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bike = Bike.new(bike_params)  #bike_params equiv (params[:bike])
-    if @bike.save #How come just a if statement triggers a save?
-      redirect_to bikes_path  #=> redirects to the index bikes
-      # redirect_to bike_path(@bike) #=> OR redirects to the created record
+    @bike = Bike.new(bike_params)
+    @bike.user = current_user
+    if @bike.save
+      redirect_to bikes_path(@bike)
     else
       puts @bike.errors.messages
-      render :new, status: :unprocessable_entity #=>??What's the new about
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:name, :category, :size, :price, :location, :picture_url, :description)
+    params.require(:bike).permit(:name, :category, :size, :price, :location, :picture_url, :description, :lat, :lon)
   end
 
   def set_bike
