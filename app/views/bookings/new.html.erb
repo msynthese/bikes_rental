@@ -23,11 +23,23 @@
         <li class=" m-2 list-unstyled">Au ...</li>
         <li class=" m-2  list-unstyled">Price $...</li>
         <div class="text-center">
-          <button class="btn btn-primary p-2"> Réserver</button>
+          <button class="btn btn-success p-2"> Réserver</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+<div class="container" class="project">
+  <%= simple_form_for [@bike, @booking] do |f| %>
+    <%#= f.input :name %>
+    <%#= f.input :category, collection: Bike.categories.keys %>
+    <%#= f.input :size, collection: Bike.sizes.keys %>
+    <%#= f.input :price %>
+    <%#= f.input :address,input_html: {data: {address_autocomplete_target: "address"},class: "d-none"},
+                      wrapper_html: {data: {controller: "address-autocomplete",
+                      address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+    <%#= f.input :picture_url %>
+    <%#= f.input :description %>
+    <%= f.submit class: "btn btn-success" %>
+  <% end %>
 </div>
