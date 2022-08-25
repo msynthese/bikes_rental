@@ -5,6 +5,22 @@
                 input_html: {data: {address_autocomplete_target: "address"},class: "d-none"},
                 wrapper_html: {data: {controller: "address-autocomplete",
                 address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+    <div class="d-flex">
+      <%= f.input :start_at, label: false,
+                            input_html: { type:"date",
+                                          id:"start",
+                                          name:"tripstart",
+                                          value: Date.today,
+                                          min:"2022-08-25",
+                                          max:"2022-12-31"}%>
+      <%= f.input :end_at, label: false,
+                          input_html: { type:"date",
+                                        id:"start",
+                                        name:"tripend",
+                                        value: Date.today,
+                                        min:Date.today,
+                                        max:Date.today.month + 12}%>
+    </div>
     <%= f.submit "Search", class: "btn btn-dark btn-search" %>
   <% end %>
   </div>

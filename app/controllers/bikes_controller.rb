@@ -17,7 +17,7 @@ class BikesController < ApplicationController
   end
 
   def index
-
+    puts(params[:tripstart])
     if params[:bike][:address].present?
       @bikes = Bike.near(params[:bike][:address], 20)
       # @bikes = Bike.where("address ILIKE ?", "%#{params[:query]}%")
