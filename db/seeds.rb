@@ -31,6 +31,7 @@ puts "Creating bikes..."
 
 default_descr = "This bike is a great bike that you will love to ride. It is smooth and fast enough to satisfy any rider. You can go where you wish to at your rythm without worrying of the quality of this bike. So get the best out of it. Enjoy it!"
 
+bike_r0 = { name: "golden bike", category: Bike.categories[:road], size: Bike.sizes[:adult], price: 55, description: default_descr, address: "Rue Voltaire 12, 1210 Geneva", user: User.first, picture_url: "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661442873/Wagon_Bikes/GoldenBike_y13yks.jpg" }
 bike_r1 = { name: "scott white", category: Bike.categories[:road], size: Bike.sizes[:adult], price: 55, description: default_descr, address: "Rue Voltaire 12, 1210 Geneva", user: User.first, picture_url: "https://bcyclet.com/wp-content/uploads/2019/11/Solace-20-2016-Bcyclet-1.jpg" }
 bike_r2 = { name: "scott grey/yellow", category: Bike.categories[:road], size: Bike.sizes[:adult], price: 75, description: default_descr, address: "Einschlussstrasse 23, 8401 Lausanne  Switzerland", user: User.first, picture_url: "https://bcyclet.com/wp-content/uploads/2020/01/Solace-premium-pads-1.jpg" }
 bike_r3 = { name: "scott white premium", category: Bike.categories[:road], size: Bike.sizes[:adult], price: 75, description: default_descr, address: "Rue Adrien-Lachenal 28, 1207 Lausanne  Switzerland", user: User.first, picture_url: "https://bcyclet.com/wp-content/uploads/2019/11/Addict-Premium-disc-Bcyclet-HQ-2.jpg" }
@@ -59,7 +60,7 @@ bike_j1 = { name: "Scott Red Junior", category: Bike.categories[:mountain], size
 bike_j2 = { name: "Scott Black Junior", category: Bike.categories[:mountain], size: Bike.sizes[:junior], price: 30, description: default_descr, address: "Maygutstrasse 8, 3084 Lausanne  Switzerland", user: User.third, picture_url: "https://bcyclet.com/wp-content/uploads/2019/11/scott-scale-junior-26-bcyclet-bike-rental-1.jpg" }
 bike_j3 = { name: "Scott E-Green Junior", category: Bike.categories[:electric], size: Bike.sizes[:junior], price: 50, description: default_descr, address: "Rosentalstrasse 5, 8400 Lausanne  Switzerland", user: User.third, picture_url: "https://bcyclet.com/wp-content/uploads/2019/11/scott-roxter-eride-bcyclet-rental-electric-trekking-junior-reduite-1.jpg" }
 
-bikes = [bike_r1, bike_r2, bike_r3, bike_r4, bike_r5, bike_r6, bike_r7, bike_r8, bike_m1, bike_m2, bike_m3, bike_m4, bike_m5, bike_m6, bike_m7, bike_e1, bike_e2, bike_e3, bike_e4, bike_e5, bike_e6, bike_j1, bike_j2, bike_j3]
+bikes = [bike_r0, bike_r1, bike_r2, bike_r3, bike_r4, bike_r5, bike_r6, bike_r7, bike_r8, bike_m1, bike_m2, bike_m3, bike_m4, bike_m5, bike_m6, bike_m7, bike_e1, bike_e2, bike_e3, bike_e4, bike_e5, bike_e6, bike_j1, bike_j2, bike_j3]
 bikes.each do |attributes|
   bike = Bike.create!(attributes)
   puts "Created #{bike.name}"

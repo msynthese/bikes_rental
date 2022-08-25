@@ -9,8 +9,12 @@
         <p class="card-text"> <%=bike.user.first_name%>  <%=bike.user.last_name%> </p>
         <p class="card-text"> <%=bike.category%> </p>
         <p class="card-text"> <%=bike.price%> </p>
-        <a href="#" class="btn btn-primary">See</a>
+        <%= link_to "See", bike_path(bike) %>
       </div>
     </div>
   <%end%>
 </div>
+<!--
+INITIAL BUTTON
+<a href="#" class="btn btn-primary"> See </a>
+-->

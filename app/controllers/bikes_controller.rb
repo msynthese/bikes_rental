@@ -9,7 +9,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to bikes_path(@bike)
+      redirect_to my_bikes_path
     else
       puts @bike.errors.messages
       render :new, status: :unprocessable_entity
@@ -21,17 +21,34 @@ class BikesController < ApplicationController
   end
 
   def show
+    if @bike.photo.key
+      @image_result = @bike.photo.key
+    else
+      @image_result = "No Image"
+    end
   end
 
   def bikes_owner
     @bikes = Bike.where(user_id: current_user)
   end
 
-
   private
 
   def bike_params
-    params.require(:bike).permit(:name, :category, :size, :price, :address, :picture_url, :description, :lat, :lon)
+    params.require(:bike).permit(
+      :name,
+      :category,
+      :size,
+      :price,
+      :address,
+      :picture_url,
+      :description,
+      :lat,
+      :lon,
+      :title,
+      :body,
+      :photo
+    )
   end
 
   def set_bike

@@ -14,7 +14,6 @@
           <p><b>Size:</b> <%= @bike.size %></p>
           <p><b>Price:</b> <%= @bike.price %>.- /day</p>
           <p><b>Owner:</b> <%= "#{@bike.user.first_name} #{@bike.user.last_name}" %></p>
-          <p><b>CURRENT USER CHECK:</b> <%= current_user.first_name %></p>
           <p class="mb-0">
           </div>
           <!-- / project-info-box -->
@@ -31,7 +30,11 @@
         </div>
         <!-- / column -->
         <div class="col-md-7">
-          <img src=<%=@bike.picture_url%> alt="project-image" class="rounded show-bike-img">
+          <% if @bike.photo.key?%>
+            <%= cl_image_tag @bike.photo.key %>
+          <%else%>
+            <img src=<%=@bike.picture_url%> alt="bike-image" class="rounded show-bike-img">
+          <%end%>
           <div class="project-info-box">
             <p><b>Number of Bookings:</b> <%= @bike.number_of_bookings %> </p>
           </div>
@@ -40,4 +43,6 @@
         <!-- / column -->
       </div>
     </div>
-    <!--bootstrap source: https://www.bootdey.com/snippets/view/project-details#css-->
+    <!--INITIAL PICTURE
+    <img src=<%=@bike.picture_url%> alt="project-image" class="rounded show-bike-img">
+    -->
