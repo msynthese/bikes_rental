@@ -1,5 +1,6 @@
 <div class="card-bike-index-main">
-  <p> <%= link_to "Back to all bikes", bikes_path %> | <%= link_to "My bikes", my_bikes_path %> </p>
+  <h1>All bikes</h1>
+  <p> <%= link_to "My published bikes", my_bikes_path %> </p>
   <div class="card-bike-index-cards">
     <% @bikes.each do |bike| %>
       <div class="card-bike-index-card">

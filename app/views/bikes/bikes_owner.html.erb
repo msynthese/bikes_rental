@@ -1,5 +1,5 @@
-<h1>Owner's Bikes</h1>
-Current User is: <%= current_user.id %>
+<h1>My published bikes</h1>
+<p> <%= link_to "Back to all bikes", bikes_path %> </p>
 <div class="card-bike-index-cards">
   <%@bikes.each do |bike|%>
     <div class="card" style="width: 18rem;">
@@ -14,4 +14,3 @@ Current User is: <%= current_user.id %>
     </div>
   <%end%>
 </div>
-<!-- bike.user_id = current_user -->
