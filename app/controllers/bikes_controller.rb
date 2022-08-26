@@ -19,13 +19,14 @@ class BikesController < ApplicationController
   def index
     tripstart = Date.parse params[:tripstart]
     tripend = Date.parse params[:tripend]
+    cookies[:tripstart] = tripstart
+    cookies[:tripend] = tripend
     location = params[:bike][:address]
     if location.present?
       @bikes = Bike.near(location, 20)
       puts(@bikes)
       @bike = @bikes.select do |bike|
-        bookings = bike.bookings
-        bookings.none? do |booking|
+        bike.bookings.none? do |booking|
           interval_search = tripstart..tripend
           interval_booking = booking.start_at..booking.end_at
           interval_booking.overlaps? interval_search

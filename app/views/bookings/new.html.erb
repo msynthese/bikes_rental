@@ -9,19 +9,21 @@
       <br>
       <h4 class="text-justify align mb-5">
         <ul style="list-style: none;"></ul>
-        <li class="my-4 list-unstyled"><em>Name : </em><%=@bike.name%></li>
-        <li class="my-4 list-unstyled"><em>Category : </em><%=@bike.category%></li>
-        <li class="my-4 list-unstyled"><em>Size : </em><%=@bike.size%></li>
-        <li class="my-4 list-unstyled"><em>Location : </em><%=@bike.address%></li>
+        <li class="my-4 list-unstyled"><em>Name: </em><%=@bike.name%></li>
+        <li class="my-4 list-unstyled"><em>Category: </em><%=@bike.category%></li>
+        <li class="my-4 list-unstyled"><em>Size: </em><%=@bike.size%></li>
+        <li class="my-4 list-unstyled"><em>Location: </em><%=@bike.address%></li>
       </h4>
     </div>
     <div class="col-sm-4 my-4">
       <br>
       <div class="shadow p-3 mb-5 bg-white rounded-4">
         <h2 class="text-center list-unstyled"><em> Summary </em></h2>
-        <h5 class=" m-2 list-unstyled">From ...</h5>
-        <h5 class=" m-2 list-unstyled">Til ...</h5>
-        <h5 class=" m-2  list-unstyled">Total $...</h5>
+        <h5 class=" m-2 list-unstyled">From: <%= cookies[:tripstart] %></h5>
+        <h5 class=" m-2 list-unstyled">Til: <%=cookies[:tripend]%></h5>
+        <%  tripstart = Date.parse cookies[:tripstart]%>
+        <%  tripend = Date.parse cookies[:tripend]%>
+        <h5 class=" m-2  list-unstyled">Total $ <%= (tripend.mjd - tripstart.mjd + 1) * @bike.price%></h5>
         <div class="text-center">
           <%= simple_form_for [@bike, @booking] do |f| %>
             <%= f.submit class: "btn btn-success" %>
