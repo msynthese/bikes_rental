@@ -23,10 +23,12 @@ class BikesController < ApplicationController
     if location.present?
       @bikes = Bike.near(location, 20)
       puts(@bikes)
-      @bikes.select do |bike|
+      @bike = @bikes.select do |bike|
         bookings = bike.bookings
-        if bookings
-          bookings.none? { |booking| (tripstart..tripend).overlaps?(booking.start_at..booking.end_at) }
+        bookings.none? do |booking|
+          interval_search = tripstart..tripend
+          interval_booking = booking.start_at..booking.end_at
+          interval_booking.overlaps? interval_search
         end
       end
       puts(@bikes)
