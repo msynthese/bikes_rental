@@ -1,9 +1,11 @@
-<div class="card-bike-index-main">
+<div class="card-bike-index-main d-flex p-2 ">
   <h1>All bikes</h1>
   <div class="card-bike-index-cards">
     <% @bikes.each do |bike| %>
-      <div class="card-bike-index-card">
-        <%= cl_image_tag bike.photo.key %>
+      <div class="card-bike-index-card w-100">
+        <% if bike.photo.present? %>
+          <%= cl_image_tag bike.photo.key %>
+        <% end %>
         <div class="bike-info">
           <%= link_to bike.name.capitalize(), new_bike_booking_path(bike) %>  <!--bike_path(bike)-->
           <p><%= bike.price %>.-/day</p>
