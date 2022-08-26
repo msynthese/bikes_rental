@@ -17,10 +17,20 @@ class BikesController < ApplicationController
   end
 
   def index
-    puts(params[:tripstart])
-    if params[:bike][:address].present?
-      @bikes = Bike.near(params[:bike][:address], 20)
-      # @bikes = Bike.where("address ILIKE ?", "%#{params[:query]}%")
+    tripstart = Date.parse params[:tripstart]
+    tripend = Date.parse params[:tripend]
+    location = params[:bike][:address]
+    if location.present?
+      @bikes = Bike.near(location, 20)
+      puts(@bikes)
+      @bikes.select do |bike|
+        bookings = bike.bookings
+        if bookings
+          bookings.none? { |booking| (tripstart..tripend).overlaps?(booking.start_at..booking.end_at) }
+        end
+      end
+      puts(@bikes)
+      # @bikes = Bike.where("bikes ILIKE ?", "%#{params[:query]}%")
     else
       @bikes = Bike.all
     end
