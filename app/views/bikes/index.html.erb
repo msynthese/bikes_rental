@@ -9,6 +9,7 @@
         <div class="bike-info">
           <%= link_to bike.name.capitalize(), new_bike_booking_path(bike) %>  <!--bike_path(bike)-->
           <p><%= bike.price %>.-/day</p>
+          <p>Owner: <%= "#{bike.user.first_name} #{bike.user.last_name}" %></p>
         </div>
       </div>
     <% end %>

@@ -1,0 +1,21 @@
+<h1>My Bookings as owner</h1>
+<div class="card-bike-index-cards">
+  <%@bookings.each do |booking|%>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> Booking </h5>
+        <p class="card-text">start: <%=booking.start_at%>
+          <p class="card-text">end: <%=booking.end_at%>
+            <p class="card-text">status: <%=booking.status%> </p>
+            <div class="d-flex justify-content-between w-100">
+              <% if booking.status == "pending" %>
+                <%= button_to "accept", booking_path(booking), method: :put, params: {status: :confirmed}, class: "btn btn-success" %>
+                <%= button_to "reject", booking_path(booking), method: :patch, params: {status: :rejected}, class: "btn btn-outline-danger" %>
+              <% end %>
+              <%= link_to "See", new_bike_booking_path(booking.bike), class: "btn btn-info" %>
+            </div>
+          </div>
+        </div>
+      <%end%>
+      <%=%>
+    </div>

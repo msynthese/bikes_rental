@@ -37,21 +37,25 @@ class BookingsController < ApplicationController
     end
   end
 
+  def bookings_owner
+    @bookings = Booking.joins(bike: :user).where(bike: { user: current_user })
+  end
+
   # def edit
   #   @booking = Booking.find(params[:id])
   # end
 
 
 
-  # def update
-  #   @booking = Booking.find(params[:id])
+  def update
+    @booking = Booking.find(params[:id])
 
-  #   if @booking.update(booking_params)
-  #     redirect_to @booking
-  #   else
-  #     render :new, status: { bookings: booking }
-  #   end
-  # end
+    if @booking.update(status: params[:status])
+      redirect_to my_bookings_path
+    else
+      render :new, status: { bookings: booking }
+    end
+  end
 
   # def destroy
   #   @booking = Booking.find(params[:id])
@@ -60,9 +64,9 @@ class BookingsController < ApplicationController
   #   redirect_to root_path, status: :see_other
   # end
 
-private
+  private
 
   def booking_params
-    params.require(:booking).permit()
+    params.require(:booking).permit
   end
 end
