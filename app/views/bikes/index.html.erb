@@ -1,8 +1,8 @@
-<div class="card-bike-index-main">
+<div class="card-bike-index-main d-flex p-2 ">
   <h1>All bikes</h1>
   <div class="card-bike-index-cards">
     <% @bikes.each do |bike| %>
-      <div class="card-bike-index-card">
+      <div class="card-bike-index-card w-100">
         <% if bike.photo.present? %>
           <%= cl_image_tag bike.photo.key %>
         <% end %>
