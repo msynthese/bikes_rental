@@ -8,6 +8,7 @@
         <p class="card-text"> <%=bike.user.first_name%>  <%=bike.user.last_name%> </p>
         <p class="card-text"> <%=bike.category%> </p>
         <p class="card-text"> <%=bike.price%> </p>
+        <p>Owner: <%= "#{bike.user.first_name} #{bike.user.last_name}" %></p>
         <%= link_to "See", bike_path(bike) %>
       </div>
     </div>

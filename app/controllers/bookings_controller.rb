@@ -36,6 +36,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def bookings_owner
+    @bookings = Booking.joins(bike: :user).where(bike: { user: current_user })
+  end
+
   # def edit
   #   @booking = Booking.find(params[:id])
   # end

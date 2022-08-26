@@ -1,0 +1,15 @@
+<h1>My Bookings as owner</h1>
+<div class="card-bike-index-cards">
+  <%@bookings.each do |booking|%>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> Booking </h5>
+        <p class="card-text"> <%=booking.start_at%>
+          <p class="card-text"> <%=booking.end_at%>
+            <p class="card-text"> <%=booking.status%> </p>
+            <%= link_to "See", new_bike_booking_path(booking.bike) %>
+          </div>
+        </div>
+      <%end%>
+      <%=%>
+    </div>
