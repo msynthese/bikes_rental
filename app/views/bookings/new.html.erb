@@ -1,7 +1,9 @@
 <h2 class="title text-center p-3">Observe ce magnifique vélo, et réserve le pour en profiter un max!</h2>
 <div class="container">
   <div class="img-fluid shadow p-3 rounded-4" alt="Responsive image d-flex flex-column">
-    <%= cl_image_tag @bike.photo.key %>
+    <% if @bike.photo.present? %>
+      <%= cl_image_tag @bike.photo.key %>
+    <% end %>
   </div>
   <div class="row">
     <div class="col-sm-8">
@@ -9,7 +11,8 @@
       <br>
       <h4 class="text-justify align mb-5">
         <ul style="list-style: none;"></ul>
-        <li class="my-4 list-unstyled"><em>Name : </em><%=@bike.name%></li>
+        <li class="my-4 list-unstyled"><em>User Name : </em><%=@bike.user.first_name%> <%=@bike.user.last_name%></li>
+        <li class="my-4 list-unstyled"><em>Brand Bike : </em><%=@bike.name%></li>
         <li class="my-4 list-unstyled"><em>Category : </em><%=@bike.category%></li>
         <li class="my-4 list-unstyled"><em>Size : </em><%=@bike.size%></li>
         <li class="my-4 list-unstyled"><em>Location : </em><%=@bike.address%></li>
@@ -23,12 +26,9 @@
         <h5 class=" m-2 list-unstyled">Til ...</h5>
         <h5 class=" m-2  list-unstyled">Total $...</h5>
         <div class="text-center">
-          <button type="button" class="btn btn-primary btn-lg .btn-block rounded-4">
-            <h2> Book !</h2>
-          </button>
           <%= simple_form_for [@bike, @booking] do |f| %>
+            <%= f.submit class: "btn btn-primary rounded-4" %>
           <% end %>
-          <%# <%= f.submit class: "btn btn-success" %>
         </div>
       </div>
     </div>
