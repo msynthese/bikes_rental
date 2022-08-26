@@ -1,6 +1,4 @@
-
-.card-bike-index-main{
-  // border: 1px solid red;
+.card-bike-index-main {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -16,30 +14,30 @@
   justify-items: center;
 }
 
-.card-bike-index-cards{
+.card-bike-index-cards {
   display: grid;
   flex-grow: 1;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
-.card-bike-index-card{
+.card-bike-index-card {
   height: 300px;
   width: 300px;
   border-radius: 4px;
 }
 
-.card-bike-index-card > img{
+.card-bike-index-card>img {
   width: 100%;
 }
 
-.bike-info{
+.bike-info {
   width: 100%;
   background: white;
   padding: 10px;
 }
 
-.bike-info > a:hover{
+.bike-info>a:hover {
   text-decoration: none;
   color: #52ACF4;
 }

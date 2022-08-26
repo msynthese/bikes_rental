@@ -29,9 +29,10 @@ class BookingsController < ApplicationController
     @booking.status = :pending
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path(@booking)
+      flash[:notice] = "Bike booked!"
+      redirect_to new_bike_booking_path(@booking)
     else
-      puts @booking.errors.full_messages
+      flash[:alert] = "Bike not available!"
       render :new, status: :unprocessable_entity
     end
   end
