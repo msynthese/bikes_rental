@@ -49,24 +49,12 @@ bike_j1 = { name: "Scott Red Junior", category: Bike.categories[:mountain], size
 bike_j2 = { name: "Scott Black Junior", category: Bike.categories[:mountain], size: Bike.sizes[:junior], price: 30, description: default_descr, address: "Rue de la Borde 26B, 1018 Lausanne Switzerland  Switzerland", user: User.third }
 bike_j3 = { name: "Scott E-Green Junior", category: Bike.categories[:electric], size: Bike.sizes[:junior], price: 50, description: default_descr, address: "Bd de Saint-Georges 8, 1205 Genève  Switzerland", user: User.third }
 
-bikes = [bike_r1, bike_r2, bike_r3, bike_r4, bike_r5, bike_m1, bike_m2, bike_m3, bike_m4, bike_m5, bike_e1, bike_e2, bike_e3, bike_j1, bike_j2, bike_j3]
+bikes = [bike_r1, bike_r2, bike_m1, bike_m2]
 photo_urls = [
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661441669/Wagon_Bikes/scott%20white.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661441786/Wagon_Bikes/scott%20grey%20yellow.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661441861/Wagon_Bikes/scott%20white%20premium.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661457592/Wagon_Bikes/scott%20black.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661457680/Wagon_Bikes/scott%20yellow.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661457942/Wagon_Bikes/scott%20genius%20740.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458006/Wagon_Bikes/scott%20gambler%20720.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458134/Wagon_Bikes/BMC%20Black.png",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458207/Wagon_Bikes/BMC%20red.png",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458274/Wagon_Bikes/BMC%20Grey.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458502/Wagon_Bikes/Scott%20E-sub%20Men.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458557/Wagon_Bikes/Scott%20E-sub%20Unisex.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661458614/Wagon_Bikes/Scott%20E-silence%20speed.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661459027/Wagon_Bikes/Scott%20Red%20Junior.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661459102/Wagon_Bikes/Scott%20black%20junior.jpg",
-  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661459191/Wagon_Bikes/Scott%20E-Green%20Junior.jpg"
+  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661518586/Wagon_Bikes/scott%20white.jpg",
+  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661518842/Wagon_Bikes/scott%20grey%20yellow.jpg",
+  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661518901/Wagon_Bikes/Scott%20Genius%20740.jpg",
+  "https://res.cloudinary.com/dmtk7zuvl/image/upload/v1661518976/Wagon_Bikes/gambler-720-bcyclet-rental-mtb-downhill-reduite_sh5kgo.jpg"
 ]
 bikes.each_with_index do |attributes, idx|
   bike = Bike.create!(attributes)
