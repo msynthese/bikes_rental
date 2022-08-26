@@ -11,23 +11,25 @@
         <% if user_signed_in? %>
           <% if current_user.owner?%>
             <li class="nav-item active">
-              <%= link_to "Add bike", new_bike_path, class: "nav-link" %>
-            </li>
-          <% end %>
-          <li class="nav-item dropdown">
-            <%= image_tag "user-login-32.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "My profil", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              <%# ici dessous le button que j'ai modifié %>
+              <%# <button class="btn-dark btn-sm rounded-4"> %>
+              <%= link_to "Add bike", new_bike_path, class: "nav-link" %></button>
           </li>
         <% end %>
-      </ul>
-    </div>
+        <li class="nav-item dropdown">
+          <%= image_tag "user-login-32.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "My profil", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
+</div>
 </div>
