@@ -2,7 +2,7 @@
 <div class="card-bike-index-cards">
   <%@bikes.each do |bike|%>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src=<%=bike.picture_url%> alt="bike image">
+      <%= cl_image_tag bike.photo.key %>
       <div class="card-body">
         <h5 class="card-title"> <%=bike.name%> </h5>
         <p class="card-text"> <%=bike.user.first_name%>  <%=bike.user.last_name%> </p>
@@ -13,7 +13,3 @@
     </div>
   <%end%>
 </div>
-<!--
-INITIAL BUTTON
-<a href="#" class="btn btn-primary"> See </a>
--->
