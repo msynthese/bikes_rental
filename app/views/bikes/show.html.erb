@@ -30,11 +30,7 @@
         </div>
         <!-- / column -->
         <div class="col-md-7">
-          <% if @bike.photo.key?%>
-            <%= cl_image_tag @bike.photo.key %>
-          <%else%>
-            <img src=<%=@bike.picture_url%> alt="bike-image" class="rounded show-bike-img">
-          <%end%>
+          <%= cl_image_tag @bike.photo.key %>
           <div class="project-info-box">
             <p><b>Number of Bookings:</b> <%= @bike.number_of_bookings %> </p>
           </div>
