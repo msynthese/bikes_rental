@@ -6,7 +6,7 @@
       <div class="card-bike-index-card">
         <img src="<%=bike.picture_url%>" alt="bike picture">
         <div class="bike-info">
-          <%= link_to bike.name.capitalize(), new_booking_path %>  <!--bike_path(bike)-->
+          <%= link_to bike.name.capitalize(), new_bike_booking_path(bike) %>  <!--bike_path(bike)-->
           <p><%= bike.price %>.-/day</p>
         </div>
       </div>
