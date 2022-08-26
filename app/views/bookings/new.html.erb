@@ -23,12 +23,12 @@
         <h5 class=" m-2 list-unstyled">Til ...</h5>
         <h5 class=" m-2  list-unstyled">Total $...</h5>
         <div class="text-center">
-          <button type="button" class="btn btn-primary btn-lg .btn-block rounded-4">
-            <h2> Book !</h2>
-          </button>
           <%= simple_form_for [@bike, @booking] do |f| %>
+            <%= f.submit class: "btn btn-success" %>
+            <button type="button" class="btn btn-primary btn-lg .btn-block rounded-4">
+              <h2> Book !</h2>
+            </button>
           <% end %>
-          <%# <%= f.submit class: "btn btn-success" %>
         </div>
       </div>
     </div>
