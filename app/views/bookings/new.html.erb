@@ -22,9 +22,11 @@
       <br>
       <div class="shadow p-3 mb-5 bg-white rounded-4">
         <h2 class="text-center list-unstyled"><em> Summary </em></h2>
-        <h5 class=" m-2 list-unstyled">From ...</h5>
-        <h5 class=" m-2 list-unstyled">Til ...</h5>
-        <h5 class=" m-2  list-unstyled">Total $...</h5>
+        <h5 class=" m-2 list-unstyled">From: <%= cookies[:tripstart] %></h5>
+        <h5 class=" m-2 list-unstyled">Til: <%=cookies[:tripend]%></h5>
+        <%  tripstart = Date.parse cookies[:tripstart]%>
+        <%  tripend = Date.parse cookies[:tripend]%>
+        <h5 class=" m-2  list-unstyled">Total $ <%= (tripend.mjd - tripstart.mjd + 1) * @bike.price%></h5>
         <div class="text-center">
           <%= simple_form_for [@bike, @booking] do |f| %>
             <%= f.submit class: "btn btn-primary rounded-4" %>
