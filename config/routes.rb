@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :bikes, only: %i[new create index show] do
     resources :bookings, only: %i[new create]
   end
+  resources :bookings, only: %i[update]
   get "my_bikes", to: "bikes#bikes_owner"
   get "my_bookings", to: "bookings#bookings_owner"
   # get '/bookings/:id/', to: "bookings#new"
