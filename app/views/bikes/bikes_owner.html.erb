@@ -1,5 +1,4 @@
-<h1>Owner's Bikes</h1>
-Current User is: <%= current_user.id %>
+<h1>My published bikes</h1>
 <div class="card-bike-index-cards">
   <%@bikes.each do |bike|%>
     <div class="card" style="width: 18rem;">
@@ -9,9 +8,12 @@ Current User is: <%= current_user.id %>
         <p class="card-text"> <%=bike.user.first_name%>  <%=bike.user.last_name%> </p>
         <p class="card-text"> <%=bike.category%> </p>
         <p class="card-text"> <%=bike.price%> </p>
-        <a href="#" class="btn btn-primary">See</a>
+        <%= link_to "See", bike_path(bike) %>
       </div>
     </div>
   <%end%>
 </div>
-<!-- bike.user_id = current_user -->
+<!--
+INITIAL BUTTON
+<a href="#" class="btn btn-primary"> See </a>
+-->

@@ -48,6 +48,9 @@ gem "sassc-rails"
 # For seeds to fake data
 gem "faker"
 
+# For file and image storade and file uploads
+gem "cloudinary"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
