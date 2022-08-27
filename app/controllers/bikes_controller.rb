@@ -23,17 +23,20 @@ class BikesController < ApplicationController
     cookies[:tripend] = tripend
     location = params[:bike][:address]
     if location.present?
-      @bikes = Bike.near(location, 20)
-      puts(@bikes)
-      @bike = @bikes.select do |bike|
+      bikes = Bike.near(location, 30)
+      @bikes = bikes.select do |bike|
         bike.bookings.none? do |booking|
-          interval_search = tripstart..tripend
-          interval_booking = booking.start_at..booking.end_at
-          interval_booking.overlaps? interval_search
+          puts(booking.status)
+          if booking.status != "rejected"
+            puts("enter unless")
+            interval_search = tripstart..tripend
+            interval_booking = booking.start_at..booking.end_at
+            puts(interval_search)
+            interval_booking.overlaps? interval_search
+          end
         end
       end
       puts(@bikes)
-      # @bikes = Bike.where("bikes ILIKE ?", "%#{params[:query]}%")
     else
       @bikes = Bike.all
     end
