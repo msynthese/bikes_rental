@@ -10,7 +10,7 @@
             <div class="d-flex justify-content-between w-100">
               <% if booking.status == "pending" %>
                 <%= button_to "accept", booking_path(booking), method: :put, params: {status: :confirmed}, class: "btn btn-success" %>
-                <%= button_to "reject", booking_path(booking), method: :patch, params: {status: :rejected}, class: "btn btn-outline-danger" %>
+                <%= button_to "reject", booking_path(booking), method: :patch, params: {status: :rejected, start_at: :nil, end_at: :nil}, class: "btn btn-outline-danger" %>
               <% end %>
               <%= link_to "See", new_bike_booking_path(booking.bike), class: "btn btn-info" %>
             </div>
