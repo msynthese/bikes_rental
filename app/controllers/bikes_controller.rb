@@ -25,13 +25,10 @@ class BikesController < ApplicationController
     if location.present?
       bikes = Bike.near(location, 30)
       @bikes = bikes.select do |bike|
-        bike.bookings.none? do |booking|
-          puts(booking.status)
-          if booking.status != "rejected"
-            puts("enter unless")
+        bike.bookings.each do |booking|
+          if booking != "rejected"
             interval_search = tripstart..tripend
             interval_booking = booking.start_at..booking.end_at
-            puts(interval_search)
             interval_booking.overlaps? interval_search
           end
         end
